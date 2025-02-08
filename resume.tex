@@ -36,14 +36,14 @@
 
 \urlstyle{same}
 
-\raggedbottom
-\raggedright
+\raggedbottom%
+\raggedright%
 \setlength{\tabcolsep}{0in}
 
 % Sections formatting
 \titleformat{\section}{
 	\vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+}{}{0em}{}[\color{black}\titlerule{} \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -92,88 +92,83 @@
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-	%----------HEADING----------
-	\begin{center}
-		\textbf{\Huge \scshape Pedro Castro} \\ \vspace{1pt}
-		\small +351 913455559 $|$ \href{mailto:falecompedroac@gmail.com}{\underline{falecompedroac@gmail.com}} $|$
-		\href{https://linkedin.com/in/peucastro}{\underline{linkedin.com/in/peucastro}} $|$
-		\href{https://github.com/peucastro}{\underline{github.com/peucastro}}
-	\end{center}
+%----------HEADING----------
+\begin{center}
+	\textbf{\Huge \scshape Pedro Castro} \\ \vspace{1pt}
+	\small +351 913455559 $|$ \href{mailto:falecompedroac@gmail.com}{\underline{falecompedroac@gmail.com}} $|$
+	\href{https://linkedin.com/in/peucastro}{\underline{linkedin.com/in/peucastro}} $|$
+	\href{https://github.com/peucastro}{\underline{github.com/peucastro}}
+\end{center}
 
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart%
 
-	%-----------EDUCATION-----------
-	\section{Education}
-	\resumeSubHeadingListStart
+\resumeSubheading%
+{Faculty of Engineering of the University of Porto}{Porto, Portugal}
+{Bachelor in Informatics and Computing Engineering}{September 2022 – Present}
 
-	\resumeSubheading
-	{Faculty of Engineering of the University of Porto}{Porto, Portugal}
-	{Bachelor in Informatics and Computing Engineering}{September 2022 -- Present}
+\resumeSubHeadingListEnd%
 
-	\resumeSubHeadingListEnd
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart%
 
+\resumeSubheading%
+{Recruit}{October 2024 – Present}
+{NIAEFEUP}{Porto, Portugal}
+\resumeItemListStart%
+\resumeItem{Developing a mobile app in Flutter made for students to help them organize their academic life and schedule more easily.}
+\resumeItem{Developer of the College Student's Association website using Svelte, Tailwind CSS, Kotlin and Spring Boot.}
+\resumeItemListEnd%
 
-	%-----------EXPERIENCE-----------
-	\section{Experience}
-	\resumeSubHeadingListStart
+\resumeSubHeadingListEnd%
 
-	\resumeSubheading
-	{Recruit}{October 2024 -- Present}
-	{NIAEFEUP}{Porto, Portugal}
-	\resumeItemListStart
-	\resumeItem{Developing a mobile app in Flutter made for students to help them organize their academic life and schedule more easily.}
-	\resumeItem{Developer of the College Student's Association website using Svelte, Tailwind CSS, Kotlin and Spring Boot.}
-	\resumeItemListEnd
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart%
 
-	\resumeSubHeadingListEnd
+\resumeProjectHeading%
+{\textbf{Pacman} $|$ \emph{Java, SOLID Principles}}{December 2024}
+\resumeItemListStart%
+\resumeItem{Developed a text-based adaptation of the classic Pac-Man game using Java.}
+\resumeItem{Designed the project following SOLID principles for maintainability and scalability.}
+\resumeItemListEnd%
 
+\resumeProjectHeading%
+{\textbf{Water Supply Management Analysis Tool} $|$ \emph{Max-Flow Graph Algorithms}}{April 2024}
+\resumeItemListStart%
+\resumeItem{Developed a tool to assist the Management Team of a water supply network in Portugal.}
+\resumeItem{Implemented Max-Flow Graph Algorithms to analyze network metrics and evaluate resilience.}
+\resumeItem{Provided insights for resource allocation and identified potential improvements.}
+\resumeItemListEnd%
 
-	%-----------PROJECTS-----------
-	\section{Projects}
-	\resumeSubHeadingListStart
+\resumeProjectHeading%
+{\textbf{L.EIC Schedules Management System} $|$ \emph{Schedule Management, Sorting, Searching}}{November 2023}
+\resumeItemListStart%
+\resumeItem{Created a system for managing a course schedule efficiently.}
+\resumeItem{Implemented tools for modifying, searching, viewing, sorting, and listing schedules.}
+\resumeItemListEnd%
 
-	\resumeProjectHeading
-	{\textbf{Pacman} $|$ \emph{Java, SOLID Principles}}{December 2024}
-	\resumeItemListStart
-	\resumeItem{Developed a text-based adaptation of the classic Pac-Man game using Java.}
-	\resumeItem{Designed the project following SOLID principles for maintainability and scalability.}
-	\resumeItemListEnd
+\resumeProjectHeading%
+{\textbf{Image Editing Program} $|$ \emph{C++, CLI, Image Processing}}{May 2023}
+\resumeItemListStart%
+\resumeItem{Developed a simple C++ CLI tool for image manipulation operations.}
+\resumeItem{Implemented features such as cropping, mirroring, inverting, and pasting images.}
+\resumeItemListEnd%
 
-	\resumeProjectHeading
-	{\textbf{Water Supply Management Analysis Tool} $|$ \emph{Max-Flow Graph Algorithms}}{April 2024}
-	\resumeItemListStart
-	\resumeItem{Developed a tool to assist the Management Team of a water supply network in Portugal.}
-	\resumeItem{Implemented Max-Flow Graph Algorithms to analyze network metrics and evaluate resilience.}
-	\resumeItem{Provided insights for resource allocation and identified potential improvements.}
-	\resumeItemListEnd
+\resumeSubHeadingListEnd%
 
-	\resumeProjectHeading
-	{\textbf{L.EIC Schedules Management System} $|$ \emph{Schedule Management, Sorting, Searching}}{November 2023}
-	\resumeItemListStart
-	\resumeItem{Created a system for managing a course schedule efficiently.}
-	\resumeItem{Implemented tools for modifying, searching, viewing, sorting, and listing schedules.}
-	\resumeItemListEnd
-
-	\resumeProjectHeading
-	{\textbf{Image Editing Program} $|$ \emph{C++, CLI, Image Processing}}{May 2023}
-	\resumeItemListStart
-	\resumeItem{Developed a simple C++ CLI tool for image manipulation operations.}
-	\resumeItem{Implemented features such as cropping, mirroring, inverting, and pasting images.}
-	\resumeItemListEnd
-
-	\resumeSubHeadingListEnd
-
-
-	%-----------TECHNICAL SKILLS-----------
-	\section{Technical Skills}
-	\begin{itemize}[leftmargin=0.15in, label={}]
-		\small{\item{
-			\textbf{Programming Languages}{: C, C++, RISC-V Assembly, Java, Python, SQL, HTML, CSS, JavaScript, TypeScript, Dart} \\
-			\textbf{Software Development}{: Object-Oriented Programming, Design Patterns, Refactoring, Unit Testing, Debugging, Git} \\
-			\textbf{Algorithms and Data Structures}{: Algorithm Analysis, Algorithm Design, Graph Algorithms} \\
-			\textbf{Databases and Data Analysis}{: SQLite, MySQL, Pandas, Relational Algebra, Database Design}
-		}}
-	\end{itemize}
-
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+	\small{\item{
+	      \textbf{Programming Languages}{: C, C++, RISC-V Assembly, Java, Python, SQL, HTML, CSS, JavaScript, TypeScript, Dart} \\
+	      \textbf{Software Development}{: Object-Oriented Programming, Design Patterns, Refactoring, Unit Testing, Debugging, Git} \\
+	      \textbf{Algorithms and Data Structures}{: Algorithm Analysis, Algorithm Design, Graph Algorithms} \\
+	      \textbf{Databases and Data Analysis}{: SQLite, MySQL, Pandas, Relational Algebra, Database Design}
+	      }}
+\end{itemize}
 
 %-------------------------------------------
 \end{document}
