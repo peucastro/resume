@@ -7,18 +7,16 @@
 
 \documentclass[a4paper,11pt]{article}
 
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[empty]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
 \usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -94,10 +92,21 @@
 \begin{document}
 %----------HEADING----------
 \begin{center}
-	\textbf{\Huge \scshape Pedro Castro} \\ \vspace{1pt}
-	\small Porto, Portugal $|$ +351 913455559 $|$ \href{mailto:falecompedroac@gmail.com}{\underline{falecompedroac@gmail.com}} $|$
-	\href{https://linkedin.com/in/peucastro}{\underline{linkedin.com/in/peucastro}} $|$
-	\href{https://github.com/peucastro}{\underline{github.com/peucastro}}
+	\begin{tabularx}{\textwidth}{@{} X >{\centering\arraybackslash}X >{\raggedleft\arraybackslash}X @{}}
+		\begin{minipage}[b]{0.32\textwidth}
+			\raggedright\small
+			\faPhone{} +351 913455559 \\
+			\faEnvelope{} \href{mailto:falecompedroac@gmail.com}{\underline{falecompedroac@gmail.com}}
+		\end{minipage}
+		 &
+		{\textbf{\Huge Pedro Castro}}
+		 &
+		\begin{minipage}[b]{0.32\textwidth}
+			\raggedleft\small
+			\faLinkedin{} \href{https://linkedin.com/in/peucastro}{\underline{linkedin.com/in/peucastro}} \\
+			\faGithub{} \href{https://github.com/peucastro}{\underline{github.com/peucastro}}
+		\end{minipage}
+	\end{tabularx}
 \end{center}
 
 %-----------PROFILE-----------
