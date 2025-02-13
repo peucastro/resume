@@ -26,7 +26,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add resume.jpg
+          git add resume.pdf resume.jpg
           git commit -m "Updated resume preview"
           git push
         continue-on-error: true
