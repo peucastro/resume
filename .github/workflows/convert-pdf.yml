@@ -1,0 +1,32 @@
+name: Generate Resume Preview
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install LaTeX and ImageMagick
+        run: sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-latex-extra ghostscript imagemagick
+
+      - name: Compile LaTeX to PDF
+        run: pdflatex -interaction=nonstopmode resume.tex
+
+      - name: Convert PDF to PNG
+        run: convert -density 600 resume.pdf -quality 90 -background white resume.jpg
+
+      - name: Commit and push updated PNG
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add resume.jpg
+          git commit -m "Updated resume preview"
+          git push
+        continue-on-error: true
