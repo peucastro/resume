@@ -31,7 +31,7 @@ jobs:
 
       - name: Convert PDF to JPG preview
         run: |
-          magick -density 600 -quality 95 -colorspace sRGB -background white resume.pdf[0] resume.jpg
+          convert -density 600 -quality 95 -colorspace sRGB -background white resume.pdf[0] resume.jpg
 
       - name: Check for changes
         id: changes
