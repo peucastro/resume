@@ -1,121 +1,42 @@
 %-------------------------
-% Resume in Latex
-% Author : Pedro Castro
-% Based off of: https://github.com/jakegut/resume
-% License : MIT
+% Pedro Castro's Resume
 %------------------------
 
-\documentclass[a4paper,11pt]{article}
+\input{template}
 
-\usepackage[english]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[empty]{fullpage}
-\usepackage{fancyhdr}
-\usepackage{titlesec}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{enumitem}
-\usepackage{tabularx}
-\usepackage{fontawesome5}
-\usepackage[hidelinks]{hyperref}
-
+% PDF metadata
 \hypersetup{
-	pdfauthor={Pedro Castro},
-	pdftitle={Pedro Castro's Resume},
-	pdfsubject={Resume},
-	pdfkeywords={Pedro Castro, Resume, Informatics, Computing Engineering, FEUP, Software Development, Programming},
-	pdfproducer={Latex with hyperref},
-	pdfcreator={pdflatex}
+  pdfauthor={Pedro Castro},
+  pdftitle={Pedro Castro's Resume},
+  pdfsubject={Resume},
+  pdfkeywords={Pedro Castro, Resume, Informatics, Computing Engineering, FEUP, Software Development, Programming},
+  pdfproducer={Latex with hyperref},
+  pdfcreator={pdflatex}
 }
-
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\setlength{\footskip}{4.1pt}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
-
-\urlstyle{same}
-
-\raggedbottom%
-\raggedright%
-\setlength{\tabcolsep}{0in}
-
-% Sections formatting
-\titleformat{\section}{
-	\vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule{} \vspace{-5pt}]
-
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
-
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[1]{
-	\item\small{
-		{#1 \vspace{-2pt}}
-	}
-}
-
-\newcommand{\resumeSubheading}[4]{
-	\vspace{-2pt}\item
-	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-		\textbf{#1} & #2 \\
-		\textit{\small#3} & \textit{\small #4} \\
-	\end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-	\item
-	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-		\textit{\small#1} & \textit{\small #2} \\
-	\end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-	\item
-	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-		\small#1 & #2 \\
-	\end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-	\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-	\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
 
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  RESUME CONTENT STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+
 %----------HEADING----------
 \begin{center}
-	\textbf{\Huge Pedro Castro} \\ \vspace{6pt}
-	\faMapMarker*{} \small Porto, Portugal $|$ \faPhone{} +351 913455559 \\ \vspace{2pt}
-	\faEnvelope{} \href{mailto:falecompedroac@gmail.com}{\underline{falecompedroac@gmail.com}} $|$
-	\faLinkedin{} \href{https://linkedin.com/in/peucastro}{\underline{linkedin.com/in/peucastro}} $|$
-	\faGithub{} \href{https://github.com/peucastro}{\underline{github.com/peucastro}} $|$
-	\faGlobe{} \href{https://peucastro.pages.dev/}{\underline{peucastro.pages.dev}}
+  \textbf{\Huge Pedro Castro} \\ \vspace{6pt}
+  \faMapMarker*{} \small{Porto, Portugal} $|$ \faPhone{} +351 913455559 \\ \vspace{2pt}
+  \faEnvelope{} \href{mailto:falecompedroac@gmail.com}{\underline{falecompedroac@gmail.com}} $|$
+  \faLinkedin{} \href{https://linkedin.com/in/peucastro}{\underline{linkedin.com/in/peucastro}} $|$
+  \faGithub{} \href{https://github.com/peucastro}{\underline{github.com/peucastro}} $|$
+  \faGlobe{} \href{https://peucastro.pages.dev/}{\underline{peucastro.pages.dev}}
 \end{center}
 
 %-----------PROFILE-----------
 \section{Profile}
 \begin{itemize}[leftmargin=0.15in, label={}]
-	\small{\item{
-	      Informatics and Computing B.E. student at FEUP with a strong interest in problem-solving and algorithm design. \\
-	      Passionate about learning new technologies and contributing to projects. Open-source supporter.
-	      }}
+    \small{
+    \item{
+        Informatics and Computing B.E. student at FEUP with a strong interest in problem-solving and algorithm design. \\
+        Passionate about learning new technologies and contributing to projects. Open-source supporter.
+    }}
 \end{itemize}
 
 %-----------EDUCATION-----------
@@ -146,7 +67,6 @@ Computer Security, Computer Graphics.\ \resumeItemListEnd%
 \resumeItemListStart%
 \resumeItem{Enhancing test reliability in CI pipelines by building tools to detect and report non-deterministic tests in large Scala codebases.}
 \resumeItemListEnd%
-
 
 \resumeSubheading%
 {Member}{Oct 2024--Present}
@@ -206,22 +126,24 @@ Computer Security, Computer Graphics.\ \resumeItemListEnd%
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
-	\small{\item{
-	      \textbf{Programming Languages}{: C, C++, RISC-V Assembly, Java, Python, SQL, HTML, CSS, JavaScript, Dart} \\
-	      \textbf{Frameworks}{: JUnit, Mockito, Flutter, Vue.js} \\
-	      \textbf{Software Development}{: Object-Oriented Programming, Software Architecture, Design Patterns, Refactoring, Unit Testing, Debugging, Linux, Git} \\
-	      \textbf{Algorithms and Data Structures}{: Algorithm Analysis, Algorithm Design, Graph Algorithms} \\
-	      \textbf{Databases and Data Analysis}{: SQLite, PostgreSQL, MySQL, Pandas, Relational Algebra, Database Design}
-	      }}
+    \small{
+    \item{
+        \textbf{Programming Languages}{: C, C++, RISC-V Assembly, Java, Python, SQL, HTML, CSS, JavaScript, Dart} \\
+        \textbf{Frameworks}{: JUnit, Mockito, Flutter, Vue.js} \\
+        \textbf{Software Development}{: Object-Oriented Programming, Software Architecture, Design Patterns, Refactoring, Unit Testing, Debugging, Linux, Git} \\
+        \textbf{Algorithms and Data Structures}{: Algorithm Analysis, Algorithm Design, Graph Algorithms} \\
+        \textbf{Databases and Data Analysis}{: SQLite, PostgreSQL, MySQL, Pandas, Relational Algebra, Database Design}
+    }}
 \end{itemize}
 
 %-----------LANGUAGES-----------
 \section{Languages}
 \begin{itemize}[leftmargin=0.15in, label={}]
-	\small{\item{
-	      \textbf{Portuguese}{: Native} $|$
-	      \textbf{English}{: Highly Proficient}
-	      }}
+    \small{
+    \item{
+        \textbf{Portuguese}{: Native} $|$
+        \textbf{English}{: Highly Proficient}
+    }}
 \end{itemize}
 
 %-------------------------------------------
