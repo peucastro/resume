@@ -4,9 +4,6 @@ on:
   push:
     branches: [main]
     paths: ['resume.tex', 'template.tex']
-  pull_request:
-    branches: [main]
-    paths: ['resume.tex', 'template.tex']
   workflow_dispatch:
 
 jobs:
@@ -33,16 +30,12 @@ jobs:
         run: |
           convert -density 600 -quality 95 -colorspace sRGB -background white resume.pdf[0] resume.jpg
 
-      - name: Check for changes
-        id: changes
-        run: |
-          git diff --quiet resume.pdf resume.jpg || echo "changed=true" >> $GITHUB_OUTPUT
-
       - name: Commit and push files
-        if: steps.changes.outputs.changed == 'true' && github.event_name == 'push'
-        run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add resume.pdf resume.jpg
-          git commit -m "Auto-update resume PDF and preview [skip ci]"
-          git push
+        if: github.event_name == 'push'
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: 'Auto-update resume PDF and preview [skip ci]'
+          file_pattern: 'resume.pdf resume.jpg'
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
