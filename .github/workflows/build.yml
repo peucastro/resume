@@ -2,8 +2,8 @@ name: Build Resume
 
 on:
   push:
-    branches: [main]
-    paths: ['resume.tex', 'template.tex']
+    branches: [ main ]
+    paths: [ 'resume.tex', 'template.tex' ]
   workflow_dispatch:
 
 jobs:
@@ -25,6 +25,16 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y imagemagick
+
+      - name: Install tex-fmt
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y cargo
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+          cargo install --git "https://github.com/wgunderwood/tex-fmt"
+
+      - name: Check LaTeX formatting
+        run: find . -name "*.tex" -exec tex-fmt --check {} \;
 
       - name: Convert PDF to JPG preview
         run: |
