@@ -32,7 +32,6 @@ jobs:
           publish_dir: ./deploy
           publish_branch: gh-pages
           force_orphan: true
-          cname: cv.peucastro.github.io
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
