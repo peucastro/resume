@@ -21,7 +21,6 @@ jobs:
         run: |
           mkdir -p deploy
           cp resume.pdf deploy/Pedro_Castro_CV.pdf
-          echo "cv.peucastro.github.io" > deploy/CNAME
           touch deploy/.nojekyll
           echo "/ /Pedro_Castro_CV.pdf 200" > deploy/_redirects
 
