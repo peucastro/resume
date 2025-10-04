@@ -1,0 +1,42 @@
+name: Deploy Resume
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'resume.pdf' ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Prepare deployment directory
+        run: |
+          mkdir -p deploy
+          cp resume.pdf deploy/Pedro_Castro_CV.pdf
+          echo "cv.peucastro.github.io" > deploy/CNAME
+          touch deploy/.nojekyll
+          echo "/ /Pedro_Castro_CV.pdf 200" > deploy/_redirects
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deploy
+          publish_branch: gh-pages
+          force_orphan: true
+          cname: cv.peucastro.github.io
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ./deploy --project-name=cv
