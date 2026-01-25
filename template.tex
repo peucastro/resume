@@ -12,10 +12,11 @@
 \usepackage[empty]{fullpage}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
-\usepackage[usenames,dvipsnames]{color}
+\usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{fontawesome5}
-\usepackage[hidelinks]{hyperref}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -36,6 +37,19 @@
 \raggedbottom%
 \raggedright%
 \setlength{\tabcolsep}{0in}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+  linkcolor=black,
+  citecolor=black
+}
+
+\renewcommand{\ULdepth}{1.5pt}
+\makeatletter
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\uline{#2}}}
+\makeatother
 
 % Sections formatting
 \titleformat{\section}{
@@ -70,10 +84,10 @@
   \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeCompanyHeading}[3]{
+\newcommand{\resumeCompanyHeading}[2]{
 \item
   \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
-    \textbf{#1} #3 & {\small #2} \\
+    \textbf{#1} & {\small #2} \\
   \end{tabular*}\vspace{-2pt}
 }
 
